@@ -13,6 +13,25 @@ rm -rf ~/.config/dconf/user
 # Qt的槽里面执行exec的话，主事件循环正常运行，但是绑定到槽的exec执行完才能继续处理这个信号。(就这个信号会等待槽执行完，才能继续处理这个信号关联的其他槽)其它信号正常处理
 
 # qmlDir导入问题
+1. cmake 配置
+```
+qt_add_qml_module(appuntitled4
+    URI untitled4
+    NO_RESOURCE_TARGET_PATH
+    VERSION 1.0
+    QML_FILES
+    Main.qml
+    # imports/Untitled3/HAle.qml
+    # imports/Untitled3/Best.qml
+    # imports/Untitled3/qmldir
+    # RESOURCE_PREFIX /untitled3
+    RESOURCES
+    imports/Untitled3/HAle.qml
+    imports/Untitled3/Best.qml
+    imports/Untitled3/qmldir
+)
+```
+2. 代码配置
 ``` 
 // 通过 qt_add_qml_module 引入别的qmlDir
 engine.addImportPath("qrc:/imports");
@@ -25,3 +44,4 @@ const QUrl url(u"qrc:/Main.qml"_qs);
 // 总结： 都是通过addImportPath 配置引用别的模块的qml
 engine.addImportPath("qrc:/qrc");
 ```
+
