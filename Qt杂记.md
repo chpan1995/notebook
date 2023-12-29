@@ -48,7 +48,7 @@ engine.addImportPath("qrc:/qrc");
 # Qt6 添加子CMakeLists.txt 的qt_add_qml_module
 - 主CMake的target_link_libraries 要加secondplugin second </br>
   这样生成了两个库  libsecondplugin.a libsecond.a
-- 导入secondplugin Q_IMPORT_QML_PLUGIN(com_SecondPlugin)
+- 导入secondplugin Q_IMPORT_QML_PLUGIN(com_SecondPlugin) 参数就是URI
 
 - addImportPath(":/"); // ':/'插件的前缀不然使用不了second里面的qml
 

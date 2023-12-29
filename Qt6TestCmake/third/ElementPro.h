@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QQmlEngine>
-#include <third/Custompp.h>
+
 class ElementPro : public QObject
 {
     Q_OBJECT
@@ -12,8 +12,6 @@ public:
     explicit ElementPro(QObject *parent = nullptr);
 
 signals:
-private:
-    Custompp * m_cpp;
 };
 
 #endif // ELEMENTPRO_H

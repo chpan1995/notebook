@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import my.rej 1.0
-import third 1.0
+import second 1.0
 Rectangle {
   color: "#FF0000"
 
@@ -8,13 +8,17 @@ Rectangle {
   Connections{
       target: re
       function onSigreg(){
-        console.log("12222");
+        console.log("3333");
       }
   }
   Rejest{
   }
 
-  ThridTst {
+  Haha {
+
+  }
+
+  ElementPro {
 
   }
 }

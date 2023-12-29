@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QQmlEngine>
+
 class Rejest : public QObject
 {
     Q_OBJECT
