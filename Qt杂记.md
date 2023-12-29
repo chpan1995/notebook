@@ -51,3 +51,17 @@ engine.addImportPath("qrc:/qrc");
 - 导入secondplugin Q_IMPORT_QML_PLUGIN(com_SecondPlugin)
 
 - addImportPath(":/"); // ':/'插件的前缀不然使用不了second里面的qml
+
+```
+OUTPUT_DIRECTORY 指定生成插件库、qmldir 和 typeinfo 文件的位置。
+当未给出此关键字时，默认值将是目标路径（由 URI 形成）附加到 QT_QML_OUTPUT_DIRECTORY 变量的值。
+如果未定义该变量，则默认值取决于后台目标的类型。对于可执行文件，
+值将是目标路径附加到 ${CMAKE_CURRENT_BINARY_DIR}，而对于其他目标，它将仅为 ${CMAKE_CURRENT_BINARY_DIR}。
+当源代码树的结构与 QML 模块目标路径的结构匹配时（这是强烈推荐的），通常不需要 QT_QML_OUTPUT_DIRECTORY。
+为了匹配目标路径的结构，您必须将目录命名与模块 URI 的段完全一样。
+例如，如果您的模块 URI 是 MyUpperCaseThing.mylowercasething，您需要将其放在一个名为 MyUpperCaseThing/mylowercasething/ 的目录中。
+指定 OUTPUT_DIRECTORY 关键字的需要应该是罕见的，但如果使用它，调用者可能还需要添加到 IMPORT_PATH，
+以确保语法检查、qml 源的缓存编译、静态构建中插件的自动导入以及非静态构建中导入的 QML 模块的部署都能正确工作。
+```
+
+
