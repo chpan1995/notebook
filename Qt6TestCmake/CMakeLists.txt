@@ -48,10 +48,12 @@ add_subdirectory(second)
 # 不需要在second，third的cmake中相互引用了
 target_link_libraries(appTestCmake
     PRIVATE Qt6::Quick
-    secondplugin #qt_add_qml_module里面的模块 生成了两个库  libsecondplugin.a libsecond.a
+    secondplugin
+     #qt_add_qml_module里面的模块 生成了两个库
+    # libsecondplugin.a libsecond.a 这个是add_libary生成
     second  # 正常模块为add_library的模块。不加则找不到里面的Cpp文件
     thirdplugin
-    third
+    # third
 )
 
 include(GNUInstallDirs)

@@ -9,16 +9,16 @@ project(third VERSION 0.1 LANGUAGES CXX)
 qt6_policy(SET QTP0001 NEW)
 
 qt_add_library(${PROJECT_NAME} STATIC
-    Custompp.h Custompp.cpp
+    # Custompp.h Custompp.cpp
     # Rejest.h Rejest.cpp
-
-    )
+)
 
 qt_add_qml_module(${PROJECT_NAME}
     URI third #为了匹配目标路径的结构，您必须将目录命名与模块 URI 的段完全一样
     VERSION 1.0
+    PLUGIN_TARGET thirdplugin
     QML_FILES ThridTst.qml
-    # SOURCES ElementPro.h ElementPro.cpp
+    SOURCES ElementPro.h ElementPro.cpp
 )
 
 set_target_properties(appTestCmake PROPERTIES

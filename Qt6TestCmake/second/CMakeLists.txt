@@ -10,11 +10,12 @@ qt6_policy(SET QTP0001 NEW)
 
 qt_add_library(${PROJECT_NAME} STATIC
     Rejest.h Rejest.cpp # 传统模式
-    )
+)
 
 qt_add_qml_module(${PROJECT_NAME}
     URI second #为了匹配目标路径的结构，您必须将目录命名与模块 URI 的段完全一样
     VERSION 1.0
+    PLUGIN_TARGET secondplugin #指定插件名字 默认插件名称为 mymoduleplugin
     QML_FILES Test.qml dep/Haha.qml
     SOURCES ElementPro.h ElementPro.cpp # C++ 放这里可以识别QML_ELEMENT
 )
