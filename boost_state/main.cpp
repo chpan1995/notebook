@@ -61,6 +61,7 @@ namespace sc = boost::statechart;
 //                              boost::statechart::custom_reaction<EVchargePause>
 //                              >reactions;
 //     boost::statechart::result react(const EVchargePause& ev) {
+//         // 还没return transit<chargePause>()，所有上一个状态还没释放
 //         if(state_downcast<const SlowCharge*>()) {
 //             std::cout << "state_downcast SlowCharge\n";
 //         }else if(state_downcast<const FastCharge*>()) {
