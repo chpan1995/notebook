@@ -8,6 +8,8 @@
 #include <boost/statechart/state.hpp>
 #include <iostream>
 
+#define DEEP_HISTORY
+
 #ifdef DEEP_HISTORY
 namespace sc = boost::statechart;
 
@@ -91,7 +93,8 @@ struct FastCharge : sc::simple_state<FastCharge, Charging> {
 
 // 充电子状态：
 struct chargePause : sc::simple_state<chargePause, Operational> {
-    typedef sc::transition<EvStart, sc::deep_history<SlowCharge>> reactions; // 必须指定为组下的子状态。必须不在同一组内
+    // 必须指定为组下的子状态。必须不在同一组内(chargePause状态在外围（不属于Charging组）)
+    typedef sc::transition<EvStart, sc::deep_history<SlowCharge>> reactions;
     chargePause() { std::cout << "Charging chargePause\n"; }
     ~chargePause(){
         std::cout << "~chargePause() \n";
@@ -109,18 +112,15 @@ int main() {
     robot.process_event(EvStart());
 
     // robot.process_event(EvSlowCharge()); // 切换到
-
     // robot.process_event(EvMove()); // 切换到 moving
-
     // robot.process_event(EvShutdown()); // 进入 Shutdown
     // robot.process_event(EvRestart()); // 恢复到 FastCharge，而不是 SlowCharge
-
     return 0;
 }
 #endif
 /////////////////////////正交
 
-
+#ifdef ZEJ
 #include <iostream>
 #include <boost/statechart/state_machine.hpp>
 #include <boost/statechart/simple_state.hpp>
@@ -292,3 +292,4 @@ int main() {
     }
     return 0;
 }
+#endif
