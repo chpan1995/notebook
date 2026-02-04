@@ -1,0 +1,25 @@
+{
+  /* 此配置文件用于定义应用程序的 TypeScript 编译选项 */
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "types": ["vite/client"],
+    /*
+     * 针对应用代码（src/、浏览器运行的 Vue/React 代码），
+     * 会包含 DOM 类型、不同的模块/目标设置，供 IDE（tsserver）、构建工具和测试使用。
+    */
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true, /* 此选项用于启用对未使用局部变量的检查 */
+    "noUnusedParameters": true, /* 此选项用于启用对未使用参数的检查 */
+    "erasableSyntaxOnly": true, /* 此选项用于启用仅可擦除语法的检查 */
+    "noFallthroughCasesInSwitch": true, /* 此选项用于启用对 switch 语句中贯穿情况的检查 */
+    "noUncheckedSideEffectImports": true /* 此选项用于启用对未检查副作用导入的检查 */
+  },
+  // 把"src/**/*.d.ts"包含进来，添加shims-vue.d.ts里面允许导入.vue文件的声明（）
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts"]
+}

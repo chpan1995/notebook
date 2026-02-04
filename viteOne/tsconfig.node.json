@@ -1,0 +1,35 @@
+{
+  /*此配置文件用于定义 Node.js 环境下的 TypeScript 编译选项 */
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "types": ["node"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /*
+     * tsconfig.node.json 的设置只影响被它 include/files 指定的文件（或被明确使用该配置的工具），
+     * 例如 vite.config.ts、某些脚本。它不应该包含整个 src/（否则会把应用代码当作 Node 项目来检查）。
+    */
+    /* 针对在 Node 环境运行的工具/脚本（例如 vite.config.ts、构建脚本），
+     * 通常把 types: ["node"]、moduleResolution、noEmit 等为 Node/构建工具优化的选项放在这里。
+     * 你的 tsconfig.node.json 中 include: ["vite.config.ts"] 说明了这一点。
+     */
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["vite.config.ts"]
+}
