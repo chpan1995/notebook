@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="parent">
         <Child1></Child1>
         <Child2></Child2>
     </div>
@@ -17,5 +17,12 @@ import Child2 from './Child2.vue';
 </script>
 
 <style scoped lang="scss">
-
+.parent {
+    // vw是指视口宽度的百分比
+    width: 100vw;
+    // vw是指视口高度的百分比
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 </style>

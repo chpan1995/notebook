@@ -17,12 +17,18 @@ import Child2 from './Child2.vue';
 <style scoped lang="scss">
 .box {
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   background: yellowgreen;
   background: yellowgreen;
   .container{
-  display: flex;
-  justify-content: space-between;
-}
+    display: flex;
+    height: 100%;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    text-align: center;
+  }
 }
 </style>

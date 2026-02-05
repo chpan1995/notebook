@@ -27,6 +27,10 @@ defineExpose({
   background-color: antiquewhite;
   width: 500px;
   height: 500px;
+  h1{
+    text-align: center;
+    font-size: 24px;
+  }
 }
 
 </style>

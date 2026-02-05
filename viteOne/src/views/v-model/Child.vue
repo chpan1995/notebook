@@ -1,8 +1,7 @@
 <template>
     <div class="son1">
         <h1>钱数  {{props.modelValue}}</h1>
-        <button @click="handel">父子子键同步数据</button>
-
+        <el-button class="btn" @click="handel">父子子键同步数据</el-button>
     </div>
 </template>
 
@@ -21,8 +20,18 @@ let $emit = defineEmits(['update:modelValue']);
 
 <style>
 .son1{
-  width: 800px;
-  height: 100px;
+  flex: 1;
+  width: 100%;
   background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+  .btn {
+    margin: auto;
+  }
 }
 </style>

@@ -13,5 +13,8 @@ let props=defineProps(['home']);
 </script>
 
 <style lang="scss">
-
+// 不加 scoped 会影响到子组件
+p {
+    font-size: 24px;
+}
 </style>

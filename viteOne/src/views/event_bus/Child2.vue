@@ -1,7 +1,7 @@
 <template>
   <div class="son2">
     <h2>我是子组件2:曹丕</h2>
-    <button class="btn" @click="handel"> 点击发送 </button>
+    <el-button class="btn" @click="handel"> 点击发送 </el-button>
   </div>
 </template>
 

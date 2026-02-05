@@ -1,9 +1,11 @@
 <template>
     <div class="event2">
-        <h1> 我是子组件二 </h1>
-        <button @click="handle"> 点击一 </button>
-        <br>
-        <button @click="$emit('click','123456')">点击二</button>
+        <h1 class="title"> 我是子组件二 </h1>
+        <div>
+            <el-button @click="handle">点击一</el-button>
+            <el-button @click="$emit('click','123456')">点击二</el-button>
+        </div>
+        
     </div>
 </template>
 
@@ -17,8 +19,14 @@
 <style lang="scss">
 .event2{
   background-color: pink;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    margin: auto;
+  }
 }
 
 </style>

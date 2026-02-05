@@ -2,7 +2,7 @@
 
 <div class="child">
     <h1>{{info.count}}-----{{info.total}}</h1>
-    <button @click="updateCount">点击我修改仓库数据</button>
+    <el-button @click="updateCount">点击我修改仓库数据</el-button>
 </div>
 
 </template>
@@ -20,8 +20,16 @@ const updateCount = () => {
 
 <style lang="scss">
 .child {
-  width: 200px;
-  height: 200px;
+  h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+  .el-button {
+    display: block;
+    margin: 60px auto;
+  }
+  width: 100%;
+  flex: 1;
   background: yellowgreen;
 }
 </style>

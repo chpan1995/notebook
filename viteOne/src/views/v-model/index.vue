@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <h1> v-model {{ money }} {{ pageNo }} {{ pageSize }}</h1>
-        <input type="text" v-model="info">
-        <!-- <Child :money="money" @update:moneyValue="handel"></Child> -->
-        <!--- v-model后面不写默认属性是modelValue---->
-        <Child1 v-model="money"></Child1>
-        <Child2 v-model:page-no="pageNo" v-model:page-size="pageSize"></Child2>
+    <div class="parent">
+        <h1> money: {{ money }} ----  pageNo: {{ pageNo }} ---- pageSize: {{ pageSize }}</h1>
+        <div class="content">
+            <el-input v-model="info" placeholder="请输入内容" @change="handleChange"></el-input>
+            <!-- <Child :money="money" @update:moneyValue="handel"></Child> -->
+            <!--- v-model后面不写默认属性是modelValue---->
+            <Child1 v-model="money"></Child1>
+            <Child2 v-model:page-no="pageNo" v-model:page-size="pageSize"></Child2>
+        </div>
+
     </div>
 
 
@@ -28,7 +31,31 @@ let handel = (data: any) => {
     money.value = data;
 }
 
+let handleChange = (val: any) => {
+    console.log(val);
+}
+
 
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.parent {
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh;
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    /*这让 .content 占满剩余高度，子元素 flex:1 就能正确撑满，不需要算 header 高度，也能避免整页滚动。*/
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        flex: 1;
+        overflow: auto; 
+    }
+}
+</style>

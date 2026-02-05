@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="parent">
         <Test1>
             <div>
                 <pre> 大奖都去 </pre>
@@ -34,4 +34,12 @@ let todo=ref(
 
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+</style>

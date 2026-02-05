@@ -14,8 +14,8 @@ let todoStore = useTodoStore();
 
 <style scoped>
 .child2 {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  flex: 1;
   background: hotpink;
 }
 </style>

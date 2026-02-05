@@ -3,7 +3,7 @@
     <div :title="$arrt.title" @click="$emit('xxx')">
         <!-- 这是 Vue 3 的语法糖 ，等价于： <el-button v-bind="$arrt"></el-button> -->
         <!-- 把所有 attrs 原封不动透传给 el-button -->
-        <el-button :="$arrt"></el-button>
+        <el-button :="$arrt">attr</el-button>
     </div>
 </template>
 

@@ -18,5 +18,12 @@ provide('take',car);
 </script>
 
 <style scoped lang="scss">
-
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 </style>
