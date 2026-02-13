@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(QtcoroSpecial LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+find_package(Qt6 REQUIRED COMPONENTS Core)
+
+add_library(${PROJECT_NAME} INTERFACE)
+
+target_include_directories(${PROJECT_NAME} INTERFACE
+    ${CMAKE_CURRENT_LIST_DIR}
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}>
+)
+
+target_link_libraries(${PROJECT_NAME} INTERFACE
+    Gcoro
+    Qt6::Core
+)
