@@ -1,0 +1,9 @@
+build*
+CMakeLists.txt.user*
+*.pri
+.cache
+libgraineval.so
+.vscode
+.DS_Store
+.idea
+.clangd
